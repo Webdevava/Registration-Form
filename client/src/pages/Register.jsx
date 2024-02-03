@@ -21,7 +21,7 @@
       e.preventDefault();
 
       try {
-        const response = await axios.post('http://localhost:5000/api/register', formData);
+        const response = await axios.post('https://registration-form-uyc4.onrender.com/api/register', formData);
         console.log(response.data);
         // Redirect to login page after successful registration
         navigate('/login');
