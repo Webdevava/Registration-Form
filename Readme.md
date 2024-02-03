@@ -32,7 +32,7 @@ React Router DOM is utilized for navigation within the application.
     npm run dev
     ```
 
-4. Open your browser and visit `http://localhost:3000` to access the application.
+4. Open your browser and visit `http://localhost:5173` to access the application.
 
 ## Server
 
