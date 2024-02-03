@@ -64,13 +64,6 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Logout route
-app.post('/api/logout', (req, res) => {
-  // Clear the JWT token cookie
-  res.clearCookie('token');
-  res.status(200).send('Logout successful');
-});
-
 // User route
 app.get('/api/user', async (req, res) => {
   try {
@@ -96,6 +89,15 @@ app.get('/api/user', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
+
+
+// Logout route
+app.post('/api/logout', (req, res) => {
+  // Clear the JWT token cookie
+  res.clearCookie('token');
+  res.status(200).send('Logout successful');
+});
+
 
 
 // Start server
