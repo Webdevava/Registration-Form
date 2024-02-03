@@ -50,11 +50,12 @@ app.post('/api/login', async (req, res) => {
 
     const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    // Set the JWT token as a cookie
+    // Set the JWT token as a cookie with updated settings
     res.cookie('token', token, {
       httpOnly: true,
       maxAge: 3600000, // 1 hour (in milliseconds)
-      sameSite: 'strict',
+      sameSite: 'None',
+      secure: true, // Required if using 'None'
     });
 
     res.json({ message: 'Login successful' });
@@ -63,6 +64,7 @@ app.post('/api/login', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
 
 // User route
 app.get('/api/user', async (req, res) => {
