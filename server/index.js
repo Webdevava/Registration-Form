@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors({ credentials: true, origin: 'https://registration-7y0d.onrender.com' }));
+app.use(cors({ credentials: true, origin: 'https://login-registration-mern.vercel.app' }));
 app.use(cookieParser());
 
 // Connect to MongoDB
