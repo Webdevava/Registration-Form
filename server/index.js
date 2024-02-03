@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const User = require('./models/User');
+const User = require('./Models/User');
 require('dotenv').config();
 
 const app = express();
