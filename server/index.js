@@ -5,10 +5,7 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const User = require('./Models/User');
-<<<<<<< HEAD
 const Project = require('./Models/Project');
-=======
->>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 require('dotenv').config();
 
 const app = express();
@@ -16,7 +13,6 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-<<<<<<< HEAD
 app.use(express.urlencoded({extended:false}));
 app.use(cors({ credentials: true, origin: 'http://localhost:5174' }));
 app.use(cors({ credentials: true, origin: 'https://webdevava.vercel.app' }));
@@ -73,10 +69,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 // User route
 app.get('/api/user', async (req, res) => {
   try {
@@ -113,7 +106,6 @@ app.post('/api/logout', (req, res) => {
 
 
 
-<<<<<<< HEAD
 
 //create
 app.post('/api/project', async (req, res) => {
@@ -163,10 +155,6 @@ app.delete('/api/project/:id', async (req, res) => {
 
 
 
-
-
-=======
->>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
