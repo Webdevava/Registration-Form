@@ -5,6 +5,10 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const User = require('./Models/User');
+<<<<<<< HEAD
+const Project = require('./Models/Project');
+=======
+>>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 require('dotenv').config();
 
 const app = express();
@@ -12,6 +16,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
+<<<<<<< HEAD
+app.use(express.urlencoded({extended:false}));
+app.use(cors({ credentials: true, origin: 'http://localhost:5174' }));
+app.use(cors({ credentials: true, origin: 'https://webdevava.vercel.app' }));
 app.use(cors({ credentials: true, origin: 'https://login-registration-mern.vercel.app' }));
 app.use(cookieParser());
 
@@ -65,7 +73,10 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 // User route
 app.get('/api/user', async (req, res) => {
   try {
@@ -102,6 +113,60 @@ app.post('/api/logout', (req, res) => {
 
 
 
+<<<<<<< HEAD
+
+//create
+app.post('/api/project', async (req, res) => {
+  try {
+    const project = await Project.create(req.body);
+    console.log(req.body)
+    res.status(200).json({ project });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//read all
+app.get('/api/project', async (req, res) => {
+  try {
+    const projects = await Project.find({});
+    res.status(200).json({ projects });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//read by id
+app.get('/api/project/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const project = await Project.findById(id);
+    if (!project) {
+      return res.status(404).json({ message: 'Project not found' });
+    }
+    res.status(200).json({ project });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//delete
+app.delete('/api/project/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Project.findByIdAndDelete(id);
+    res.status(200).json({ message: 'Project deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+
+
+
+=======
+>>>>>>> 8b59862bbd3b2f0969b413b9c54b0e518a9653a8
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
