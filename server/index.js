@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-app.use(cors({ credentials: true, origin: 'https://ankurauti.vercel.app' }));
-app.use(cors({ credentials: true, origin: 'http://localhost:5174' }));
-app.use(cors({ credentials: true, origin: 'https://webdevava.vercel.app' }));
-app.use(cors({ credentials: true, origin: 'https://login-registration-mern.vercel.app' }));
+// app.use(express.urlencoded({extended:false}));
+// app.use(cors({ credentials: true, origin: 'https://ankurauti.vercel.app' }));
+// app.use(cors({ credentials: true, origin: 'http://localhost:5174' }));
+app.use(cors({ credentials: true, origin: 'https://webdevava.netlify.app' }));
+// app.use(cors({ credentials: true, origin: 'https://login-registration-mern.vercel.app' }));
 app.use(cookieParser());
 
 // Connect to MongoDB
